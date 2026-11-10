@@ -319,6 +319,85 @@
             padding: 10px 15px;
         }
 
+        /* === MENU: NAV DANH MỤC, MÔ TẢ, ALLERGENE === */
+        .cat-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 40px;
+        }
+
+        .cat-nav a {
+            text-decoration: none;
+            color: #d32f2f;
+            border: 1.5px solid #d32f2f;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .cat-nav a:hover {
+            background: #d32f2f;
+            color: #fff;
+        }
+
+        .category-block {
+            scroll-margin-top: 120px;
+        }
+
+        .category-desc,
+        .sub-cat-desc {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .sub-cat-desc {
+            grid-column: 1 / -1;
+            margin: -10px 0 0 0;
+        }
+
+        .allergen {
+            font-size: 0.6em;
+            color: #888;
+            font-weight: 600;
+            text-transform: none;
+        }
+
+        .dish-options {
+            font-size: 0.85rem;
+            color: #444;
+            background: #fcfcfc;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-top: 8px;
+        }
+
+        .allergen-info {
+            font-size: 0.8rem;
+            color: #555;
+            line-height: 1.6;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .allergen-info p {
+            margin-bottom: 10px;
+        }
+
+        .takeaway-note {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-top: 20px;
+        }
+
         /* === FOOTER === */
         .footer {
             position: relative;
@@ -554,7 +633,24 @@
     <section class="menu-page">
         <h1 class="menu-page-title">Unsere Speisekarte</h1>
 
-        <div class="category-block">
+        <nav class="cat-nav">
+            <a href="#mittag">Mittag</a>
+            <a href="#suppen">Suppen</a>
+            <a href="#vorspeisen">Vorspeisen</a>
+            <a href="#salate">Salate</a>
+            <a href="#nudeln">Nudeln</a>
+            <a href="#reis">Reis</a>
+            <a href="#spezial">Spezial</a>
+            <a href="#kinder">Kinder</a>
+            <a href="#saucen">Saucen</a>
+            <a href="#sushi">Sushi</a>
+            <a href="#poke">Poke Bowl</a>
+            <a href="#sushi-menues">Sushi Menüs</a>
+            <a href="#dessert">Dessert</a>
+        </nav>
+
+        <!-- ===== MITTAG ANGEBOT ===== -->
+        <div class="category-block" id="mittag">
             <div class="category-header">
                 <h2 class="category-title">Mittag Angebot</h2>
                 <span class="category-subtitle">11:00 - 16:00 Uhr</span>
@@ -592,12 +688,14 @@
                 <div class="dish">
                     <div class="dish-head"><span class="dish-name">62. Chicken Poke Bowl</span><span
                             class="price-badge">13,90€</span></div>
-                    <div class="dish-desc">Salat, Edamame, Gurke, Paprika, Mais, Seetangsalat, hausgemachte Sauce.</div>
+                    <div class="dish-desc">Gemischter Salat, Edamame, Gurke, Paprika, Mais, Seetang Salat, Sesam,
+                        Röstzwiebeln, Erdnüsse und hausgemachte Sauce.</div>
                 </div>
 
                 <div class="dish">
                     <div class="dish-head"><span class="dish-name">63. Tofu Poke Bowl</span><span
                             class="price-badge">13,90€</span></div>
+                    <div class="dish-desc">Japanischer Tofu.</div>
                 </div>
 
                 <div class="dish">
@@ -611,25 +709,35 @@
             </div>
         </div>
 
-        <div class="category-block">
+        <!-- ===== SUPPEN ===== -->
+        <div class="category-block" id="suppen">
             <div class="category-header">
                 <h2 class="category-title">Suppen</h2>
             </div>
             <div class="items-grid">
                 <div class="dish">
-                    <div class="dish-head"><span>1. Miso-Suppe</span><span class="price-badge">5,00€</span></div>
+                    <div class="dish-head"><span>1. Miso-Suppe <sup class="allergen">F, N</sup></span><span class="price-badge">5,00€</span></div>
+                    <div class="dish-desc">Eine leichte, würzige Suppe aus fermentierter Misopaste mit Tofu, Algen
+                        und Frühlingszwiebeln.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>2. Bio Lachs-Suppe</span><span class="price-badge">6,00€</span></div>
+                    <div class="dish-head"><span>2. Bio Lachs-Suppe <sup class="allergen">F, N, D</sup></span><span class="price-badge">6,00€</span></div>
+                    <div class="dish-desc">Eine leichte, würzige Suppe aus fermentierter Misopaste mit Tofu, Algen,
+                        Lachs und Frühlingszwiebeln.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>3. Wantan Suppe</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-head"><span>3. Wantan Suppe <sup class="allergen">A, C, F, 4</sup></span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Klare, aromatische Brühe mit gefüllten Teigtaschen und Gemüse.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>4. Hühner-Suppe</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-head"><span>4. Hühner-Suppe <sup class="allergen">A, C, F, 4</sup></span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Eine klare, aromatische Suppe mit zartem Mais, Bohnen, frischen Pilzen und
+                        Hühnerfleisch.</div>
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>5. Tom Yum Suppe</span></div>
+                    <div class="dish-desc">Scharf-säuerliche thailändische Suppe mit Kräutern und Limette, wahlweise
+                        mit:</div>
                     <ul class="variant-list">
                         <li><span>a. Tofu</span><span>5,00€</span></li>
                         <li><span>b. Hühnerfleisch</span><span>5,50€</span></li>
@@ -638,6 +746,7 @@
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>6. Tom Kha Suppe</span></div>
+                    <div class="dish-desc">Cremige Kokossuppe mit Zitronengras und Galgant, wahlweise mit:</div>
                     <ul class="variant-list">
                         <li><span>a. Tofu</span><span>5,00€</span></li>
                         <li><span>b. Hühnerfleisch</span><span>5,50€</span></li>
@@ -647,43 +756,57 @@
             </div>
         </div>
 
-        <div class="category-block">
+        <!-- ===== VORSPEISEN ===== -->
+        <div class="category-block" id="vorspeisen">
             <div class="category-header">
                 <h2 class="category-title">Vorspeisen</h2>
             </div>
             <div class="items-grid">
                 <div class="dish">
-                    <div class="dish-head"><span>7. Vegetarische Frühlingsrollen (6 Stk.)</span><span
+                    <div class="dish-head"><span>7. Vegetarische Frühlingsrollen (6 Stk.) <sup class="allergen">A, F, K</sup></span><span
                             class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Kleine, knusprig frittierte Frühlingsrollen mit würziger Gemüsefüllung.
+                    </div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>8. Vegetarische Gyoza (4 Stk.)</span></div>
+                    <div class="dish-head"><span>8. Gyoza (4 Stk.) <sup class="allergen">A, F, K</sup></span></div>
+                    <div class="dish-desc">Gefüllte Teigtaschen mit Gemüse, außen leicht knusprig und innen saftig.
+                    </div>
                     <ul class="variant-list">
                         <li><span>a. Vegetarisch</span><span>5,50€</span></li>
-                        <li><span>b. Hähnchen</span><span>5,50€</span></li>
-                        <li><span>c. Seafood</span><span>6,00€</span></li>
+                        <li><span>b. Hähnchen (würzige Hähnchenfüllung)</span><span>5,50€</span></li>
+                        <li><span>c. Seafood (Fisch und Garnelen)</span><span>6,00€</span></li>
                     </ul>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>10. Gebackene Wantan (6 Stk.)</span><span
+                    <div class="dish-head"><span>10. Gebackene Wantan (6 Stk.) <sup class="allergen">A, B, C, F, K</sup></span><span
                             class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Knusprig frittierte Teigtaschen mit Hähnchen und Garnelenfüllung.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>11. Ebi Tempura (3 Stk.)</span><span class="price-badge">7,00€</span>
+                    <div class="dish-head"><span>11. Ebi Tempura (3 Stk.) <sup class="allergen">A, B, C, K</sup></span><span class="price-badge">7,00€</span>
+                    </div>
+                    <div class="dish-desc">Knusprig ausgebackene Garnelen im leichten Tempurateig.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>12. Nem Saigon (2 Stk.) <sup class="allergen">C, K, 4</sup></span><span class="price-badge">6,00€</span></div>
+                    <div class="dish-desc">Knusprig frittierte vietnamesische Frühlingsrollen aus Reispapier, gefüllt
+                        mit Fleisch und Gemüse.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>13. Edamame <sup class="allergen">F, K</sup></span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Gedämpfte junge Sojabohnen, leicht gesalzen und angenehm mild.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>14. Saté-Spieße (2 Stk.) <sup class="allergen">A, D, E, F, K, 4</sup></span><span class="price-badge">6,00€</span>
+                    </div>
+                    <div class="dish-desc">Zart gegrillte Hähnchenspieße mit milder, leicht süßlicher Erdnusssauce.
                     </div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>12. Nem (2 Stk.)</span><span class="price-badge">6,00€</span></div>
-                </div>
-                <div class="dish">
-                    <div class="dish-head"><span>13. Edamame</span><span class="price-badge">5,90€</span></div>
-                </div>
-                <div class="dish">
-                    <div class="dish-head"><span>14. Saté-Spieße (2 Stk.)</span><span class="price-badge">6,00€</span>
-                    </div>
-                </div>
-                <div class="dish">
-                    <div class="dish-head"><span>15. Sommerrollen (2 Stk.)</span></div>
+                    <div class="dish-head"><span>15. Sommerrollen (2 Stk.) <sup class="allergen">K, D</sup></span></div>
+                    <div class="dish-desc">Frische Reispapierrollen mit Salat, Gurke, Sesam und Fischsoße, wahlweise
+                        mit:</div>
                     <ul class="variant-list">
                         <li><span>a. Tofu</span><span>6,00€</span></li>
                         <li><span>b. Hühnerfleisch</span><span>6,50€</span></li>
@@ -694,17 +817,79 @@
                 <div class="dish">
                     <div class="dish-head"><span>16. Yakitori-Spieße (3 Stk.)</span><span
                             class="price-badge">6,00€</span></div>
+                    <div class="dish-desc">Gegrillte Hähnchenspieße mit leichter, herzhaft-süßer Würzung und Sesam.
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="category-block">
+        <!-- ===== SALATE ===== -->
+        <div class="category-block" id="salate">
             <div class="category-header">
-                <h2 class="category-title">Vietnamesische Nudeln</h2>
+                <h2 class="category-title">Salate</h2>
+            </div>
+            <div class="items-grid">
+                <div class="dish">
+                    <div class="dish-head"><span>17. Wakame Salat <sup class="allergen">K, N</sup></span><span class="price-badge">7,50€</span></div>
+                    <div class="dish-desc">Frischer Algensalat und Avocado mit Sesam, leicht süßlich, würzig und
+                        knackig.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>18. Grilled Chicken Salat</span><span
+                            class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Gegrillte Hähnchen auf frischem Salat mit leichter Würzung und
+                        Fischsoße-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>19. Grilled Beef Salat</span><span class="price-badge">15,90€</span>
+                    </div>
+                    <div class="dish-desc">Gegrillte Rindfleischstreifen auf frischem Salat mit aromatischer Würzung
+                        und Fischsoße-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>20. Grilled Duck Salat</span><span class="price-badge">16,90€</span>
+                    </div>
+                    <div class="dish-desc">Gegrillte Entenbrust auf frischem Salat mit würzig-aromatischer Note und
+                        Fischsoße-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>21. Fried Tofu Salat</span><span class="price-badge">12,90€</span>
+                    </div>
+                    <div class="dish-desc">Knusprig gebratener Tofu auf frischem Salat mit leichter Würzung und
+                        Fischsoße-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>22. Grilled Shrimp Salat</span><span
+                            class="price-badge">16,90€</span></div>
+                    <div class="dish-desc">Frischer Salat mit Mango, Kräutern, Garnelen und leichtem,
+                        fruchtig-würzigem Fischsoßen-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>23. Glasnudeln Salat</span><span class="price-badge">9,00€</span>
+                    </div>
+                    <div class="dish-desc">Leichter Salat mit Glasnudeln, Gemüse, Garnelen und aromatischem
+                        Fischsoßen-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>24. Nộm Xoài – Mango Salat</span><span class="price-badge">9,00€</span>
+                    </div>
+                    <div class="dish-desc">Knackige Mango- und Möhrenstreifen, angerichtet mit vietnamesischen
+                        Kräutern, gebratenen Garnelen und gerösteten Erdnüssen.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== VIETNAMESISCHE NUDELN GERICHTE ===== -->
+        <div class="category-block" id="nudeln">
+            <div class="category-header">
+                <h2 class="category-title">Vietnamesische Nudeln Gerichte</h2>
             </div>
             <div class="items-grid">
                 <div class="dish">
                     <div class="dish-head"><span>30. Phở</span></div>
+                    <div class="dish-desc">Traditionelle vietnamesische Suppe. Die Hühnerbrühe wird mit gerösteten
+                        Gewürzen, Ingwer und Schalotten gekocht, dazu Reisbandnudeln. Verfeinert mit
+                        Frühlingszwiebeln und Koriander.</div>
                     <ul class="variant-list">
                         <li><span>a. Tofu</span><span>13,90€</span></li>
                         <li><span>b. Hühnerfleisch</span><span>14,90€</span></li>
@@ -713,77 +898,628 @@
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>35. Bún Nem</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Reisnudeln mit Salat, Koriander, aromatischem Fischsoßen-Dressing und
+                        knusprig frittierten Nem-Rollen.</div>
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>36. Bún Thịt Nướng</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Gegrilltes Schweinefleisch in geröstetem Sesam, Reisnudeln mit
+                        Zitronengras, frischem Salat, Erdnüssen, Röstzwiebeln, Koriander und dazu ein leichtes
+                        Fischsoßen-Dressing.</div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-head"><span>31. Phở Curry</span></div>
+                    <div class="dish-desc">Reisbandnudeln mit Gemüse, Koriander und aromatischer Thai-Curry Soße
+                        (leicht scharf).</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>44. Udon Curry</span></div>
+                    <div class="dish-desc">Japanische Udon-Nudeln mit Gemüse, Koriander und aromatischer Thai-Curry
+                        Soße (leicht scharf).</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>32. Phở Xào</span></div>
+                    <div class="dish-desc">Gebratene vietnamesische Reisbandnudeln mit Gemüse und Koriander.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>33. Miến Xào</span></div>
+                    <div class="dish-desc">Gebratene Glasnudeln mit Gemüse, Koriander und aromatischem
+                        Fischsoßen-Dressing.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>45. Bún Nam Bộ</span></div>
+                    <div class="dish-desc">Frischer vietnamesischer Nudelsalat aus Reisnudeln mit Salat, Karotten,
+                        frischem Koriander, Röstzwiebeln, Erdnüssen und einem würzigen Fischsauce-Dressing.</div>
                 </div>
 
                 <div class="shared-topping-box">
-                    <div class="shared-topping-title">31. Phở Udon Curry / 32. Phở Xào / 33. Miến Xào / 43. Udon / 45.
-                        Bún Nam Bộ</div>
+                    <div class="shared-topping-title">Für 31. Phở Curry / 32. Phở Xào / 33. Miến Xào / 44. Udon Curry /
+                        45. Bún Nam Bộ – wahlweise mit:</div>
                     <ul class="variant-list shared-topping-grid">
                         <li><span>a. Tofu</span><span>14,90€</span></li>
                         <li><span>b. Hühnerfleisch</span><span>14,90€</span></li>
-                        <li><span>c. Gegr. Hühnerbrust</span><span>16,90€</span></li>
-                        <li><span>d. Gegr. Rindfleisch</span><span>17,90€</span></li>
-                        <li><span>e. Entenbrust</span><span>18,90€</span></li>
-                        <li><span>f. Gegr. Garnelen</span><span>18,90€</span></li>
-                        <li><span>g. Knuspr. Hühnerbrust</span><span>15,90€</span></li>
-                        <li><span>h. Gegr. Bio Lachs</span><span>19,90€</span></li>
-                        <li><span>i. Gegr. Thunfisch</span><span>20,90€</span></li>
+                        <li><span>c. Gegrillte Hühnerbrust</span><span>16,90€</span></li>
+                        <li><span>d. Gegrilltes Rindfleisch</span><span>17,90€</span></li>
+                        <li><span>e. Entenbrust (Barbarie Ente)</span><span>18,90€</span></li>
+                        <li><span>f. Gegrillte Garnelen</span><span>18,90€</span></li>
+                        <li><span>g. Knusprige Hühnerbrust</span><span>15,90€</span></li>
+                        <li><span>h. Gegrillter Bio Lachs</span><span>19,90€</span></li>
+                        <li><span>i. Gegrillter Thunfisch</span><span>20,90€</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="category-block">
+        <!-- ===== VIETNAM. REIS GERICHTE ===== -->
+        <div class="category-block" id="reis">
             <div class="category-header">
-                <h2 class="category-title">Vietnam Reis & Saucen</h2>
+                <h2 class="category-title">Vietnam. Reis Gerichte</h2>
             </div>
             <div class="items-grid">
                 <div class="dish">
-                    <div class="dish-head"><span>Bò Xào (Xả Ớt)</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-head"><span>38. Bò Xào Xả Ớt</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Gebratenes Rindfleisch mit Zitronengras und Chili, aromatisch angebraten,
+                        mit Reis und Gemüse dazu.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>Gà Xào (Xả Ớt)</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-head"><span>39. Gà Xào Xả Ớt</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Gebratenes Hühnerfleisch mit Zitronengras und Chili, aromatisch
+                        angebraten, mit Reis und Gemüse dazu.</div>
                 </div>
                 <div class="dish">
-                    <div class="dish-head"><span>Thai Curry / Erdnuss / Mango / Süß-Sauer / Chop Suey</span></div>
+                    <div class="dish-head"><span>40. Bò Xào Rau</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Gebratenes Rindfleisch aromatisch mit pikanter Soße angebraten, mit Reis
+                        und Gemüse dazu.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>41. Gà Xào Rau</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Gebratenes Hühnerfleisch aromatisch mit pikanter Soße angebraten, mit Reis
+                        und Gemüse dazu.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SPEZIELLE HAUPTGERICHTE ===== -->
+        <div class="category-block" id="spezial">
+            <div class="category-header">
+                <h2 class="category-title">Spezielle Hauptgerichte</h2>
+            </div>
+            <div class="items-grid">
+                <div class="dish">
+                    <div class="dish-head"><span>43. Japanische Udon-Nudeln</span></div>
+                    <div class="dish-desc">Gebratene japanische Udon-Nudeln mit verschiedenem Gemüse und
+                        Sojasprossen, wahlweise mit:</div>
                     <ul class="variant-list">
-                        <li><span>Tofu / Huhn</span><span>12,90€</span></li>
-                        <li><span>Gegr. Hühnerbrust</span><span>14,90€</span></li>
-                        <li><span>Gegr. Rindfleisch</span><span>15,90€</span></li>
-                        <li><span>Ente / Garnelen</span><span>16,90€</span></li>
+                        <li><span>a. Tofu</span><span>14,90€</span></li>
+                        <li><span>b. Hühnerfleisch</span><span>14,90€</span></li>
+                        <li><span>c. Gegrillte Hühnerbrust</span><span>16,90€</span></li>
+                        <li><span>d. Gegrilltes Rindfleisch</span><span>17,90€</span></li>
+                        <li><span>e. Entenbrust (Barbarie Ente)</span><span>18,90€</span></li>
+                        <li><span>f. Gegrillte Garnelen</span><span>18,90€</span></li>
+                        <li><span>g. Knusprige Hühnerbrust</span><span>15,90€</span></li>
+                        <li><span>h. Gegrillter Bio Lachs</span><span>19,90€</span></li>
+                        <li><span>i. Gegrillter Thunfisch</span><span>20,90€</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="category-block">
+        <!-- ===== KINDER MENU ===== -->
+        <div class="category-block" id="kinder">
             <div class="category-header">
-                <h2 class="category-title">Sushi & Dessert</h2>
+                <h2 class="category-title">Kinder Menü</h2>
             </div>
             <div class="items-grid">
                 <div class="dish">
-                    <div class="dish-head"><span>P1. Maki-Mix (18 Stk.)</span><span class="price-badge">14,50€</span>
+                    <div class="dish-head"><span>K1. Reis mit Knusperhuhn</span><span
+                            class="price-badge">10,50€</span></div>
+                    <div class="dish-desc">Reis, 1 Stk. knuspriges Hähnchen und frischer Salat mit Süß-Chili-Soße.
                     </div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>K2. Reis mit Saté Spieße</span><span class="price-badge">9,50€</span>
+                    </div>
+                    <div class="dish-desc">Reis, 2 Stk. Hähnchen Saté Spieße und frischer Salat mit Erdnusssoße.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SAUCEN GERICHTE ===== -->
+        <div class="category-block" id="saucen">
+            <div class="category-header">
+                <h2 class="category-title">Saucen Gerichte</h2>
+            </div>
+            <p class="category-desc">Mit Jasmin-Reis und gekochtem Gemüse serviert, dazu wahlweise Soße und Beilage
+                Ihrer Auswahl.</p>
+            <div class="items-grid">
+                <div class="dish">
+                    <div class="dish-head"><span>50. Thai Curry Soße (Gemüse)</span><span
+                            class="price-badge">12,90€</span></div>
+                    <div class="dish-desc">Mit aromatischer Kokosmilch und Thai-Curry Gewürzen, leicht scharf und
+                        cremig.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>51. Thai Erdnuss Soße (Gemüse)</span><span
+                            class="price-badge">12,90€</span></div>
+                    <div class="dish-desc">Mit cremiger Thai-Erdnusssauce und Kokosmilch, leicht süß-würzig.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>52. Thai Mango Soße (Gemüse)</span><span
+                            class="price-badge">12,90€</span></div>
+                    <div class="dish-desc">Mit fruchtiger Thai-Mangosauce und Kokosmilch, leicht süß und aromatisch.
+                    </div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>53. Süß-Sauer Soße (Gemüse)</span><span
+                            class="price-badge">12,90€</span></div>
+                    <div class="dish-desc">Mit Süß-Sauer-Sauce und Ananas.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>54. Chop Suey (Gemüse)</span><span class="price-badge">12,90€</span>
+                    </div>
+                    <div class="dish-desc">Würzige Woksoße aus Sojasoße, Brühe und Austernsoße, verfeinert mit
+                        Knoblauch und leicht angedicktem Gemüsefond.</div>
+                </div>
+
+                <div class="shared-topping-box">
+                    <div class="shared-topping-title">Beilage nach Wahl (für 50 – 54):</div>
+                    <ul class="variant-list shared-topping-grid">
+                        <li><span>a. Tofu</span><span>14,90€</span></li>
+                        <li><span>b. Hühnerfleisch</span><span>14,90€</span></li>
+                        <li><span>c. Gegrillte Hühnerbrust</span><span>16,90€</span></li>
+                        <li><span>d. Gegrilltes Rindfleisch</span><span>17,90€</span></li>
+                        <li><span>e. Entenbrust (Barbarie Ente)</span><span>18,90€</span></li>
+                        <li><span>f. Gegrillte Garnelen</span><span>18,90€</span></li>
+                        <li><span>g. Knusprige Hühnerbrust</span><span>15,90€</span></li>
+                        <li><span>h. Gegrillter Bio Lachs</span><span>19,90€</span></li>
+                        <li><span>i. Gegrillter Thunfisch</span><span>20,90€</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SUSHI ===== -->
+        <div class="category-block" id="sushi">
+            <div class="category-header">
+                <h2 class="category-title">Sushi</h2>
+            </div>
+            <div class="items-grid">
+
+                <h3 class="sushi-sub-cat">Nigiri (2 Stk.) <sup class="allergen">F</sup></h3>
+                <p class="sub-cat-desc">Kleines Reisbett, belegt mit ausgewählter Zutat.</p>
+                <div class="dish">
+                    <div class="dish-head"><span>N1. Aburi Maguro</span><span class="price-badge">6,50€</span></div>
+                    <div class="dish-desc">Leicht abgeflämmter Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N2. Aburi Sake</span><span class="price-badge">6,50€</span></div>
+                    <div class="dish-desc">Flammengerösteter Lachs</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N3. Maguro</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N4. Sake</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Lachs</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N5. Surimi</span><span class="price-badge">5,00€</span></div>
+                    <div class="dish-desc">Krebsfleischimitat</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N6. Ebi</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Garnelen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N7. Unagi</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Süßwasseraal</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>N8. Avocado</span><span class="price-badge">5,00€</span></div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Sashimi <sup class="allergen">F, K</sup></h3>
+                <div class="dish">
+                    <div class="dish-head"><span>S1. Sashimi Tuna</span><span class="price-badge">20,90€</span></div>
+                    <div class="dish-desc">8 frische Thunfischscheiben, auf Seetangsalat und Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>S2. Aburi Tuna</span><span class="price-badge">21,90€</span></div>
+                    <div class="dish-desc">8 flammierte Thunfischscheiben, auf Seetangsalat und Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>S3. Sashimi Salmon</span><span class="price-badge">19,90€</span></div>
+                    <div class="dish-desc">8 frische Lachsscheiben, auf Seetangsalat und Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>S4. Aburi Salmon</span><span class="price-badge">20,90€</span></div>
+                    <div class="dish-desc">8 flammierte Lachsscheiben, auf Seetangsalat und Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>S5. Sashimi Combo</span><span class="price-badge">39,90€</span></div>
+                    <div class="dish-desc">4 frische Thunfischscheiben, 4 frische Lachsscheiben, 4 Aburi Tuna,
+                        4 Aburi Salmon, auf Seetangsalat und Avocado</div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Maki (6 Stk.) <sup class="allergen">F</sup></h3>
+                <p class="sub-cat-desc">Klassische Sushirolle mit Nori außen und Reis mit Füllung innen.</p>
+                <div class="dish">
+                    <div class="dish-head"><span>M1. Avocado Maki</span><span class="price-badge">4,50€</span></div>
+                    <div class="dish-desc">Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M2. Kappa Maki</span><span class="price-badge">4,50€</span></div>
+                    <div class="dish-desc">Gurke</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M3. Tekka Maki</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Frischer Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M4. Spicy Tekka Maki</span><span class="price-badge">5,90€</span>
+                    </div>
+                    <div class="dish-desc">Frischer Thunfisch mit Chili Soße</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M5. Negi Tekka Maki</span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Thunfisch mit Lauchzwiebeln</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M6. Tuna Maki</span><span class="price-badge">5,00€</span></div>
+                    <div class="dish-desc">Gekochter Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M7. Sake Maki</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Lachs</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M8. Sake Avocado Maki</span><span class="price-badge">5,90€</span>
+                    </div>
+                    <div class="dish-desc">Lachs, Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M9. California Maki</span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Surimi, Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M10. Tamago Maki</span><span class="price-badge">5,00€</span></div>
+                    <div class="dish-desc">Japanisches Eieromlett</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M11. Ebi Maki</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Frische Garnelen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M12. Ebi Avocado Maki</span><span class="price-badge">5,90€</span>
+                    </div>
+                    <div class="dish-desc">Frische Garnelen mit Avocado</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M13. Negi Ebi Maki</span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Frische Garnelen mit Lauchzwiebeln</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M14. Unagi Maki</span><span class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Süßwasseraal</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M15. Paprika Maki</span><span class="price-badge">4,50€</span></div>
+                    <div class="dish-desc">Paprika</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>M16. Mango Maki</span><span class="price-badge">4,90€</span></div>
+                    <div class="dish-desc">Mango</div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Inside Out (8 Stk.) <sup class="allergen">F, K, D</sup></h3>
+                <p class="sub-cat-desc">Reis außen, Nori und Füllung innen – eine umgedrehte Sushirolle.</p>
+                <div class="dish">
+                    <div class="dish-head"><span>U1. California Inside Out</span><span
+                            class="price-badge">9,50€</span></div>
+                    <div class="dish-desc">Surimi und Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U2. Sake Inside Out</span><span class="price-badge">10,50€</span>
+                    </div>
+                    <div class="dish-desc">Lachs, Avocado, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U3. Tekka Inside Out</span><span class="price-badge">11,50€</span>
+                    </div>
+                    <div class="dish-desc">Frischer Thunfisch, Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U4. Tuna Inside Out</span><span class="price-badge">10,50€</span>
+                    </div>
+                    <div class="dish-desc">Gekochter Thunfisch, Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U5. Ebi Inside Out</span><span class="price-badge">10,50€</span></div>
+                    <div class="dish-desc">Garnelen, Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U6. Ebi Tempura Inside Out</span><span
+                            class="price-badge">10,50€</span></div>
+                    <div class="dish-desc">Panierte Garnelen, Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U7. Unagi Inside Out</span><span class="price-badge">10,50€</span>
+                    </div>
+                    <div class="dish-desc">Süßwasseraal, Gurke, Sesam, Fischrogen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U8. Veggie Inside Out</span><span class="price-badge">9,50€</span>
+                    </div>
+                    <div class="dish-desc">Gurke, Avocado, Sesam</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>U9. Chicken Inside Out</span><span class="price-badge">10,50€</span>
+                    </div>
+                    <div class="dish-desc">Panierte Hähnchen, Gurke, Sesam, Fischrogen</div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Sushi Special Roll (8 Stk.) <sup class="allergen">C, F, K</sup></h3>
+                <div class="dish">
+                    <div class="dish-head"><span>R1. Sake Special Roll</span><span class="price-badge">13,90€</span>
+                    </div>
+                    <div class="dish-desc">Innen mit Surimi, Gurke und Frischkäse, außen mit Lachs umwickelt</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>R2. Blazing Tuna Roll</span><span class="price-badge">14,90€</span>
+                    </div>
+                    <div class="dish-desc">Surimi, Mango, Frischkäse, bedeckt mit Feuerthunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>R3. Ebi Special Roll</span><span class="price-badge">13,90€</span>
+                    </div>
+                    <div class="dish-desc">Innen mit Surimi, Gurke und Frischkäse, außen mit Garnelen umwickelt</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>R4. Yakitori-Style</span><span class="price-badge">13,90€</span></div>
+                    <div class="dish-desc">Innen mit Yakitori-Hähnchen, Gurke und Frischkäse, außen mit Röstzwiebeln
+                    </div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>R5. Crispy Tiger</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Panierte Garnelen, Mango, Avocado, Frischkäse, bedeckt mit Feuerlachs</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>R6. Sakura Chef Surprise</span><span
+                            class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Eine eigene Kreation unseres Sushi Chefs</div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Crunchy Roll (6 Stk.) <sup class="allergen">A, B, C, G, F, K, D</sup></h3>
+                <p class="sub-cat-desc">Paniert und knusprig, mit hausgemachten Soßen und Sesam.</p>
+                <div class="dish">
+                    <div class="dish-head"><span>C1. Sake Crunchy Roll</span><span class="price-badge">10,90€</span>
+                    </div>
+                    <div class="dish-desc">Lachs, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C2. Tekka Crunchy Roll</span><span class="price-badge">11,90€</span>
+                    </div>
+                    <div class="dish-desc">Frischer Thunfisch, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C3. Tuna Crunchy Roll</span><span class="price-badge">10,90€</span>
+                    </div>
+                    <div class="dish-desc">Gekochter Thunfisch, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C4. Ebi Tempura Crunchy Roll</span><span
+                            class="price-badge">10,90€</span></div>
+                    <div class="dish-desc">Panierte Garnelen, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C5. Kani Crunchy Roll</span><span class="price-badge">9,90€</span>
+                    </div>
+                    <div class="dish-desc">Surimi, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C6. Veggie Crunchy Roll</span><span class="price-badge">9,90€</span>
+                    </div>
+                    <div class="dish-desc">Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C7. Chicken Crunchy Roll</span><span
+                            class="price-badge">10,90€</span></div>
+                    <div class="dish-desc">Paniertes Hähnchen, Avocado, Gurke, Frischkäse</div>
+                </div>
+
+                <h3 class="sushi-sub-cat">Special Crunchy Roll <sup class="allergen">A, B, C, G, F, K</sup></h3>
+                <p class="sub-cat-desc">Paniert mit grüner Reisflockenpanade, mit hausgemachten Soßen und Sesam.</p>
+                <div class="dish">
+                    <div class="dish-head"><span>C11. Sake Crunchy Roll</span><span class="price-badge">11,90€</span>
+                    </div>
+                    <div class="dish-desc">Lachs, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C12. Tekka Crunchy Roll</span><span
+                            class="price-badge">12,90€</span></div>
+                    <div class="dish-desc">Frischer Thunfisch, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C13. Tuna Crunchy Roll</span><span class="price-badge">11,90€</span>
+                    </div>
+                    <div class="dish-desc">Gekochter Thunfisch, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C14. Ebi Tempura Crunchy Roll</span><span
+                            class="price-badge">11,90€</span></div>
+                    <div class="dish-desc">Panierte Garnelen, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C15. Kani Crunchy Roll</span><span class="price-badge">10,90€</span>
+                    </div>
+                    <div class="dish-desc">Surimi, Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C16. Veggie Crunchy Roll</span><span
+                            class="price-badge">10,90€</span></div>
+                    <div class="dish-desc">Avocado, Gurke, Frischkäse</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>C17. Chicken Crunchy Roll</span><span
+                            class="price-badge">11,90€</span></div>
+                    <div class="dish-desc">Paniertes Hähnchen, Avocado, Gurke, Frischkäse</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== POKE BOWL ===== -->
+        <div class="category-block" id="poke">
+            <div class="category-header">
+                <h2 class="category-title">Poke Bowl <sup class="allergen">A, B, C, D, F, K</sup></h2>
+            </div>
+            <p class="category-desc">Eine frische Kombination aus Reis, gemischtem Salat, Edamame, Gurke, Paprika,
+                Mais, Seetangsalat, Sesam, Röstzwiebeln, Erdnüssen und hausgemachter Sauce.</p>
+            <div class="items-grid">
+                <div class="dish">
+                    <div class="dish-head"><span>B1. Sake Poke Bowl</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Lachs</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B2. Ebi Tempura Poke Bowl</span><span
+                            class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Panierte Garnelen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B3. Tuna Poke Bowl</span><span class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Gekochter Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B4. Yakitori Poke Bowl</span><span class="price-badge">15,90€</span>
+                    </div>
+                    <div class="dish-desc">Gegrilltes Hähnchen in Yakitori-Würzung</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B5. Tofu Poke Bowl</span><span class="price-badge">14,90€</span></div>
+                    <div class="dish-desc">Knusprige Tofuwürfel</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B6. Gyoza Poke Bowl</span><span class="price-badge">15,90€</span>
+                    </div>
+                    <div class="dish-desc">Knusprige Teigtaschen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B7. Veggie Gyoza Poke Bowl</span><span
+                            class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Vegetarische knusprige Teigtaschen</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B8. Mixed Poke Bowl</span><span class="price-badge">16,90€</span>
+                    </div>
+                    <div class="dish-desc">Lachs, frische Garnelen, Thunfisch</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>B9. Karaage Chicken Poke Bowl</span><span
+                            class="price-badge">15,90€</span></div>
+                    <div class="dish-desc">Knuspriges Karaage Hähnchen</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SUSHI MENÜS ===== -->
+        <div class="category-block" id="sushi-menues">
+            <div class="category-header">
+                <h2 class="category-title">Sushi Menüs <sup class="allergen">F, K</sup></h2>
+                <span class="category-subtitle">Signature</span>
+            </div>
+            <div class="items-grid">
+                <div class="dish">
+                    <div class="dish-head"><span>P1. Maki-Mix Menü</span><span class="price-badge">14,50€</span></div>
+                    <div class="dish-desc">6 Sake Maki, 6 Tekka Maki, 6 Avocado Maki</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P2. Sake Menü (Lachs)</span><span class="price-badge">20,50€</span>
+                    </div>
+                    <div class="dish-desc">2 Stk. Sake Nigiri, 6 Sake Maki, 6 Sake Inside Out</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P3. Tekka Menü</span><span class="price-badge">21,50€</span></div>
+                    <div class="dish-desc">2 Maguro Nigiri, 6 Tekka Maki, 8 Tekka Inside Out</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P4. Crunchy Menü</span><span class="price-badge">26,50€</span></div>
+                    <div class="dish-desc">6 Ebi Tempura Crunchy, 6 Sake Crunchy, 8 Tekka Mini Crunchy</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P5. Veggie Mix Menü</span><span class="price-badge">17,50€</span>
+                    </div>
+                    <div class="dish-desc">8 Veggie Inside Out, 6 Avocado Maki, 6 Kappa Maki</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P6. Ebi Menü</span><span class="price-badge">20,50€</span></div>
+                    <div class="dish-desc">2 Ebi Nigiri, 6 Ebi Maki, 8 Ebi Inside Out</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>P7. Unagi Menü</span><span class="price-badge">20,50€</span></div>
+                    <div class="dish-desc">2 Unagi Nigiri, 6 Unagi Maki, 8 Unagi Inside Out</div>
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>P8. Couple Choice (2 Pers.)</span><span
                             class="price-badge">59,00€</span></div>
+                    <div class="dish-desc">6 Chef Surprise Roll / 8 California Inside Out / 6 Sake Crunchy Roll /
+                        6 Kappa Maki / 6 Avocado Maki / 6 Sake Maki / 4 Nigiri</div>
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>P9. Sakura Ocean Mix (3-4 Pers.)</span><span
                             class="price-badge">99,00€</span></div>
+                    <div class="dish-desc">6 Chef Surprise Roll / 8 California Inside Out / 8 Sake Inside Out /
+                        6 Kappa Maki / 6 Avocado Maki / 6 Mango Maki / 6 Ebi Tempura Crunchy Roll / 6 Stk. Nigiri /
+                        4 Stk. Salmon Sashimi / 4 Stk. Tuna Sashimi / Seetang Salat</div>
                 </div>
+            </div>
+        </div>
+
+        <!-- ===== DESSERT ===== -->
+        <div class="category-block" id="dessert">
+            <div class="category-header">
+                <h2 class="category-title">Dessert</h2>
+            </div>
+            <div class="items-grid">
                 <div class="dish">
                     <div class="dish-head"><span>D1. Gebackene Banane</span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Innen weich und süß, außen mit Honig und Erdnuss-Topping.</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>D2. Gebackener Apfel</span><span class="price-badge">5,90€</span></div>
+                    <div class="dish-desc">Außen knusprig, mit Honig und Erdnuss-Topping.</div>
                 </div>
                 <div class="dish">
                     <div class="dish-head"><span>D3. Mochi Eis (2 Stk.)</span><span class="price-badge">5,90€</span>
                     </div>
+                    <div class="dish-desc">Außen eine leicht elastische Reishülle, innen mit Eiscreme-Füllung.</div>
+                    <div class="dish-options">a. Vanille · b. Mango-Maracuja · c. Kokosnuss · d. Erdbeere</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>D4. Mochi-Reiskuchen (1 Stk.)</span><span
+                            class="price-badge">4,50€</span></div>
+                    <div class="dish-desc">Außen mit Reishülle und innen mit Füllung.</div>
+                    <div class="dish-options">a. Matcha · b. Rote Bohnenpaste</div>
+                </div>
+                <div class="dish">
+                    <div class="dish-head"><span>D5. Sesambällchen (2 Stk.)</span><span
+                            class="price-badge">5,50€</span></div>
+                    <div class="dish-desc">Knusprig frittiert, mit weichem Teig und aromatischer Sesamkruste, gefüllt
+                        mit süßer roter Bohnenpaste.</div>
                 </div>
             </div>
+        </div>
+
+        <!-- ===== ALLERGENE & ZUSATZSTOFFE ===== -->
+        <div class="allergen-info">
+            <p><strong>Allergene:</strong> A – Glutenhaltiges Getreide, B – Krebstiere, C – Eier, D – Fisch,
+                E – Erdnüsse, F – Sojabohnen, G – Milch (inkl. Laktose), H – Schalenfrüchte (z.B. Nüsse),
+                I – Sellerie, J – Senf, K – Sesamsamen, L – Schwefeldioxid &amp; Sulfite, M – Lupinen,
+                N – Weichtiere</p>
+            <p><strong>Zusatzstoffe:</strong> 1 – mit Farbstoff, 2 – mit Konservierungsstoff, 3 – mit
+                Antioxidationsmittel, 4 – mit Geschmacksverstärker, 5 – geschwefelt, 6 – geschwärzt, 7 – mit
+                Phosphat, 8 – mit Süßungsmittel, 9 – koffeinhaltig, 10 – chininhaltig</p>
+            <p class="takeaway-note">Alle Gerichte auch zum Mitnehmen!</p>
         </div>
     </section>
 

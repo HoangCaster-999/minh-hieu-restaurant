@@ -303,58 +303,7 @@
             text-decoration: underline;
         }
 
-        /* === CSS CHO 2 NÚT GHIM DƯỚI CÙNG === */
-        .floating-action-buttons {
-            position: fixed;
-            bottom: 80px;
-            /* tăng lên cho desktop */
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 12px;
-            z-index: 9999;
-            width: auto;
-            white-space: nowrap;
-        }
-
-        .fab-btn {
-            display: inline-block;
-            text-align: center;
-            padding: 10px 24px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            font-family: 'Montserrat', Arial, sans-serif;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .fab-reserve {
-            background-color: #ffffff;
-            color: #ff5252;
-            border: 1.5px solid #ff5252;
-        }
-
-        .fab-reserve:hover {
-            background-color: #fff1f1;
-            transform: translateY(-2px);
-        }
-
-        .fab-order {
-            background-color: #ff5252;
-            color: #ffffff;
-            border: 1.5px solid #ff5252;
-        }
-
-        .fab-order:hover {
-            background-color: #d32f2f;
-            border-color: #d32f2f;
-            transform: translateY(-2px);
-        }
-
+       
         /* === TỐI ƯU RESPONSIVE === */
         @media (max-width: 1024px) {
             .navbar {
@@ -456,18 +405,7 @@
                 gap: 10px;
             }
 
-            /* Nút ghim Mobile */
-            .floating-action-buttons {
-                flex-direction: column;
-                width: 220px;
-                bottom: 15px;
-                gap: 8px;
-            }
-
-            .fab-btn {
-                padding: 8px 12px;
-                font-size: 13px;
-            }
+           
         }
     </style>
 </head>
@@ -565,14 +503,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- KHỐI 2 NÚT GHIM DƯỚI CÙNG -->
-    <div class="floating-action-buttons">
-        <a href="https://www.foodbooking.com/api/res/_ov8ml" target="_blank" class="fab-btn fab-reserve">Table
-            Reservation</a>
-        <a href="https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=b42115dd-6d21-460d-bd49-002411af3756&dine_in=true&dine_in_subtype=custom&dine_in_custom_name=TWluaCBIaWV1IFJlc3RhdXJhbm50"
-            target="_blank" class="fab-btn fab-order">See MENU & Order</a>
-    </div>
 
     <!-- SCRIPT ĐỂ XỬ LÝ MENU HAMBURGER -->
     <script>
